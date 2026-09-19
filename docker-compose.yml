@@ -1,0 +1,13 @@
+services:
+  inprint:
+    build: .
+    container_name: InPrint
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      - CUPS_SERVER=/var/run/cups/cups.sock
+    env_file:
+      - .env
+    volumes:
+      - ./inprint.log:/app/inprint.log
+      - /var/run/cups:/var/run/cups
