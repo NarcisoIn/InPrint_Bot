@@ -521,13 +521,9 @@ stderr=subprocess.DEVNULL
 ### Ping fallido
 
 El bot:
-
 1. registra `IMPRESORA APAGADA`;
-
 2. notifica al administrador;
-
 3. informa al usuario que la impresora puede estar apagada o desconectada;
-
 4. entra en `REINTENTO`.
 
 No se intenta insertar el trabajo en CUPS mientras la validación de conectividad falla.
@@ -585,7 +581,6 @@ La lista se carga desde variables de entorno:
 ```env
 
 USUARIOS_PERMITIDOS=123456789,987654321
-
 ADMIN_ID=123456789
 
 ```
@@ -676,23 +671,14 @@ El proyecto también puede adaptarse a otro servidor Linux compatible con Docker
 ```text
 
 Python                  3.11
-
 python-telegram-bot     20+
-
 LibreOffice             Headless / CLI
-
 Pillow
-
 pypdf
-
 python-dotenv
-
 Docker
-
 Docker Compose
-
 CUPS
-
 iputils-ping
 
 ```
@@ -702,7 +688,6 @@ iputils-ping
 # Prerrequisitos del host
 
 El host debe disponer, como mínimo, de:
-
 - Linux con Docker Engine.
 - Docker Compose Plugin.
 - CUPS instalado y operativo.
@@ -1694,7 +1679,7 @@ Interface:   Telegram Bot API
 
 ```
 
-## 📝 Notas Técnicas
+## Notas Técnicas
 
 Este documento refleja la implementación funcional actual y su arquitectura de referencia operando sobre una Raspberry Pi 5. InPrint está diseñado principalmente para entornos locales y redes controladas (**Homelabs**). Las características descritas en la sección de mejoras futuras —como la validación avanzada de archivos y el endurecimiento de seguridad— forman parte del **roadmap** del proyecto y se recomienda su evaluación antes de exponer el servicio a usuarios no confiables.
 
