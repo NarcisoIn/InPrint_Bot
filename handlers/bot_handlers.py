@@ -245,11 +245,11 @@ def registrar_handlers(app: Application):
         states={
             COLOR: [
                 CallbackQueryHandler(cancelar_operacion, pattern='^cancelar$'),
-                CallbackQueryHandler(preguntar_duplex)
+                CallbackQueryHandler(preguntar_duplex, pattern='^(Gray|RGB)$')
             ],
             DUPLEX: [
                 CallbackQueryHandler(cancelar_operacion, pattern='^cancelar$'),
-                CallbackQueryHandler(preguntar_paginas)
+                CallbackQueryHandler(preguntar_paginas, pattern='^(None|DuplexNoTumble)$')
             ],
             PAGINAS: [
                 CallbackQueryHandler(cancelar_operacion, pattern='^cancelar$'),
@@ -258,7 +258,7 @@ def registrar_handlers(app: Application):
             ],
             COPIAS: [
                 CallbackQueryHandler(cancelar_operacion, pattern='^cancelar$'),
-                CallbackQueryHandler(ejecutar_impresion)
+                CallbackQueryHandler(ejecutar_impresion, pattern='^(1|2|3|4|5|10)$')
             ],
             REINTENTO: [
                 CallbackQueryHandler(cancelar_operacion, pattern='^cancelar$'),
